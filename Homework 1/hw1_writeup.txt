@@ -1,0 +1,81 @@
+Raymond Lin
+304937942
+CS 143
+
+Homework 1 Part 2
+1.
+a) See part 1
+b) "   "    "
+c) "   "    "
+
+d)
+	Π hour, trips/100 (σ x (hourly_ridership))
+		where x = (((hour > 7) ^ (hour < 10)) ∨ hour = 7) ∨ (((hour > 17) ^ (hour < 19)) ∨ hour = 17)  
+
+e)
+	Π x (σ y (occupancy ⋈z weather))
+		x = occupancy.station, occupancy.datetime, condition, riders
+		y = condition = 'sunny' ∨ condition = 'rainy'
+		z = occupancy.station = weather.station ^ occupancy.datetime = weather.datetime\
+
+2.
+a)
+	CREATE TABLE scooter
+	(
+		scooter_id 			serial,
+		flag				integer				NOT NULL,
+		home				varchar(30)			NOT NULL,
+		location			point,
+		PRIMARY KEY(scooter_id)
+	);
+
+	CREATE TABLE user
+	(
+		user_id				serial,
+		credit_card			integer,
+		exp_date			timestamp,
+		email				varchar(30)			NOT NULL,
+		PRIMARY KEY(user_id)
+	);
+
+b)
+	CREATE TABLE trip
+	(
+		trip_id			serial,
+		user_id			serial,
+		scooter_id		serial,
+		start_pos		point					NOT NULL,
+		end_pos			point					NOT NULL,
+		start_time		timestamp				NOT NULL,
+		end_time		timestamp				NOT NULL,
+		PRIMARY KEY(trip_id),
+		FOREIGN KEY(scooter_id) REFERENCES scooter(scooter_id),
+		FOREIGN KEY(user_id) REFERENCES user(user_id)
+	);
+
+c)
+	Method 1: insert row to database and modify row in database
+		Pros
+		-no loss of data - reliable
+		Cons
+		-frequently accessing database - slower operations
+		-increases database traffic 
+		-increases user's cell phone data usage
+
+	Method 2: cache ride data locally and then insert row in database
+		Pros
+		-reduces database traffic
+		-saves resources needed to push new data to database
+		-faster operations because part of inserting a new entry is done locally
+		Cons
+		-possible loss of data if user's cell phone loses power during ride
+
+	-would prefer method 2 as there are more pros, and the cons are rare cases
+	Method 3: cache ride data on scooter and insert row in database
+		Pros
+		-same as all pros in both of above methods
+		-don't have to worry about it losing power during a ride, as it already stops users from riding it when on low battery
+		Cons
+		-more costly to implement an embedded system in all scooter units
+
+d)

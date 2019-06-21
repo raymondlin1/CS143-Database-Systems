@@ -1,0 +1,10 @@
+#Ignore files
+Project\ 2/comments-minimal.json.bz2
+Project\ 2/submissions.json.bz2
+
+#Ignore directories
+Project\ 2/project2/
+Project\ 2/comments.parquet/
+Project\ 2/labeled_data.parquet/
+Project\ 2/submissions.parquet/
+Lecture\ Slides

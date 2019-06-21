@@ -1,0 +1,39 @@
+body, html {
+  height:100%
+}
+
+body {
+  display:flex;
+  margin:10px;
+  flex-direction:column;
+  font-family: Arial;
+}
+
+.box {
+  margin:auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.box > div {
+  margin: 5px;
+}
+
+#results_top {
+	width:1000px;
+	height:50px;
+	flex-direction:row;
+	/*overflow: hidden;*/
+}
+
+#logo {
+	width:150px;
+	float:left;
+	vertical-align:center;
+}
+
+#searchbar {
+	overflow: hidden;
+	vertical-align:middle;
+}

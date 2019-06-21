@@ -1,0 +1,51 @@
+
+Fri May  3 21:07:19 2019 - *** /home/cs143/www/SearchEngine/SearchEngine/search.py has been touched... grace them all !!! ***
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 3985)...
+Gracefully killing worker 2 (pid: 3986)...
+Gracefully killing worker 3 (pid: 3987)...
+Gracefully killing worker 4 (pid: 3988)...
+Gracefully killing worker 5 (pid: 3989)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /media/sf_vm-shared/SearchEngine
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/tmp/searchengine.sock)
+running /home/cs143/.local/bin/uwsgi
+[uWSGI] getting INI configuration from /home/cs143/www/SearchEngine/searchengine.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May  3 21:07:20 2019] ***
+compiled with version: 7.3.0 on 30 March 2019 03:07:46
+os: Linux-4.15.0-46-generic #49-Ubuntu SMP Wed Feb 6 09:33:07 UTC 2019
+nodename: cs143-19s-p1
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /media/sf_vm-shared/SearchEngine
+detected binary path: /home/cs143/.local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 7804
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /tmp/searchengine.sock fd 3
+Python version: 3.6.7 (default, Oct 22 2018, 11:32:17)  [GCC 8.2.0]
+Python main interpreter initialized at 0x564781478330
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437520 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x564781478330 pid: 764 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 764)
+spawned uWSGI worker 1 (pid: 3999, cores: 1)
+spawned uWSGI worker 2 (pid: 4000, cores: 1)
+spawned uWSGI worker 3 (pid: 4001, cores: 1)
+spawned uWSGI worker 4 (pid: 4002, cores: 1)
+spawned uWSGI worker 5 (pid: 4003, cores: 1)
+Python auto-reloader enabled
